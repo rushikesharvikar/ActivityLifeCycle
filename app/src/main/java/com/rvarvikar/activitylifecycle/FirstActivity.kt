@@ -14,7 +14,7 @@ class FirstActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first)
-        printLog(object{}.javaClass.enclosingMethod.name)
+        object {}.javaClass.enclosingMethod?.name?.let { printLog(it) }
         button1 = findViewById<Button>(R.id.button1)
         button2 = findViewById<Button>(R.id.button2)
         button1.setOnClickListener(){
@@ -24,37 +24,30 @@ class FirstActivity : AppCompatActivity() {
             showDialog()
         }
     }
-
     override fun onStart() {
         super.onStart()
-        printLog(object{}.javaClass.enclosingMethod.name)
+        object {}.javaClass.enclosingMethod?.name?.let { printLog(it) }
     }
-
     override fun onResume() {
         super.onResume()
-        printLog(object{}.javaClass.enclosingMethod.name)
+        object {}.javaClass.enclosingMethod?.name?.let { printLog(it) }
     }
-
     override fun onPause() {
         super.onPause()
-        printLog(object{}.javaClass.enclosingMethod.name)
+        object {}.javaClass.enclosingMethod?.name?.let { printLog(it) }
     }
-
     override fun onStop() {
         super.onStop()
-        printLog(object{}.javaClass.enclosingMethod.name)
+        object {}.javaClass.enclosingMethod?.name?.let { printLog(it) }
     }
-
     override fun onRestart() {
         super.onRestart()
-        printLog(object{}.javaClass.enclosingMethod.name)
+        object {}.javaClass.enclosingMethod?.name?.let { printLog(it) }
     }
-
     override fun onDestroy() {
         super.onDestroy()
-        printLog(object{}.javaClass.enclosingMethod.name)
+        object {}.javaClass.enclosingMethod?.name?.let { printLog(it) }
     }
-
     fun printLog(methodName:String){
         Log.e(TAG,methodName)
     }
@@ -62,8 +55,7 @@ class FirstActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Title")
         builder.setMessage("Message")
-        builder.setPositiveButton("Okay"){dialogInterface, which ->
-        }
+        builder.setPositiveButton("Okay") { dialogInterface, which -> }
         val alertDialog: AlertDialog = builder.create()
         alertDialog.setCancelable(false)
         alertDialog.show()
