@@ -53,8 +53,7 @@ class FirstActivity : AppCompatActivity() {
     }
     fun showDialog(){
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Title")
-        builder.setMessage("Message")
+        builder.setMessage(" When you call a dialog on top of activity, onPause() of activity will never call")
         builder.setPositiveButton("Okay") { dialogInterface, which -> }
         val alertDialog: AlertDialog = builder.create()
         alertDialog.setCancelable(false)
