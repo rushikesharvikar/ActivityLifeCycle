@@ -13,6 +13,7 @@ class FirstActivity : AppCompatActivity() {
     private lateinit var button2: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_first)
         printLog(object{}.javaClass.enclosingMethod.name)
         button1 = findViewById<Button>(R.id.button1)
         button2 = findViewById<Button>(R.id.button2)
